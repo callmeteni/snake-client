@@ -10,6 +10,11 @@ const connect = function () {
   
    conn.on("connect", () => {
       console.log("Connected to the server!");
+    //   conn.write("Name: TOO");
+    //   conn.write("Move: up");
+    //   conn.write("Move: down");
+    //   conn.write("Move: left");
+    //   conn.write("Move: right");
       // Perform actions after successful connection
   
       // Code to handle incoming data when the connection is first established
@@ -18,6 +23,11 @@ const connect = function () {
         // Perform actions with the received data
       });
     });
+
+    setInterval(() => {
+        conn.write("Move: up")
+    }, 50);
+    
   
     conn.on("close", () => {
       console.log("Connection closed!");
@@ -26,5 +36,7 @@ const connect = function () {
   
     return conn;
   };
+
+  
 
   module.exports = connect;
