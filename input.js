@@ -27,6 +27,9 @@ const setupInput = function (conn) {
   else if (data === 'd'){
     connection.write("Move: right");
   }
+  else if (data === 'm'){
+    connection.write("Say: Hello Everyone");
+  }
 }
 
   module.exports = setupInput;
